@@ -1,65 +1,103 @@
-import Image from "next/image";
+import Banner from "./components/Banner";
+import AboutSection from "./components/AboutSection";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="bg-white">
+
+      {/* ========================= BANNER ========================= */}
+      <Banner />
+
+      {/* ========================= WHY CHOOSE ========================= */}
+      <section className="py-16 bg-[#f5f8f4]">
+        <h2 className="text-3xl font-semibold text-center text-[#3b4f3a] mb-4">
+          Why Choose Artemisia?
+        </h2>
+        <p className="text-center text-gray-600 mx-auto max-w-xl mb-10">
+          Kami menghadirkan layanan kesehatan holistik, modern, dan profesional
+          untuk memberikan pengalaman terbaik bagi pasien.
+        </p>
+
+        <AboutSection />
+      </section>
+
+      {/* ========================= OUR SERVICES ========================= */}
+      <section className="py-20">
+        <h2 className="text-3xl font-semibold text-center text-[#3b4f3a] mb-4">
+          Layanan Unggulan Kami
+        </h2>
+
+        <p className="text-center text-gray-600 mx-auto max-w-xl mb-12">
+          Berbagai layanan medis terbaik dengan tenaga profesional dan fasilitas lengkap.
+        </p>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+
+          {/* Service Item 1 */}
+          <div className="bg-[#f0f5ef] p-8 rounded-xl shadow-sm hover:shadow-md transition">
+            <h3 className="text-xl font-semibold text-[#3b4f3a] mb-3">Konsultasi Dokter</h3>
+            <p className="text-gray-600">
+              Konsultasi langsung dengan dokter berpengalaman untuk solusi kesehatan Anda.
+            </p>
+          </div>
+
+          {/* Service Item 2 */}
+          <div className="bg-[#f0f5ef] p-8 rounded-xl shadow-sm hover:shadow-md transition">
+            <h3 className="text-xl font-semibold text-[#3b4f3a] mb-3">Perawatan Gizi</h3>
+            <p className="text-gray-600">
+              Pendampingan nutrisi untuk menjaga kesehatan tubuh secara menyeluruh.
+            </p>
+          </div>
+
+          {/* Service Item 3 */}
+          <div className="bg-[#f0f5ef] p-8 rounded-xl shadow-sm hover:shadow-md transition">
+            <h3 className="text-xl font-semibold text-[#3b4f3a] mb-3">Pemeriksaan Kesehatan</h3>
+            <p className="text-gray-600">
+              Pemeriksaan lengkap dengan alat modern untuk deteksi dini berbagai penyakit.
+            </p>
+          </div>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* ========================= TESTIMONIAL ========================= */}
+      <section className="py-20 bg-[#f5f8f4]">
+        <h2 className="text-3xl font-semibold text-center text-[#3b4f3a] mb-12">
+          Apa Kata Pasien Kami?
+        </h2>
+
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+
+          {/* Testimonial 1 */}
+          <div className="bg-white p-8 rounded-xl shadow">
+            <p className="text-gray-700 italic mb-4">
+              “Pelayanan sangat ramah dan profesional. Saya merasa sangat terbantu!”
+            </p>
+            <h4 className="font-semibold text-[#3b4f3a]">— Maria L.</h4>
+          </div>
+
+          {/* Testimonial 2 */}
+          <div className="bg-white p-8 rounded-xl shadow">
+            <p className="text-gray-700 italic mb-4">
+              “Kliniknya bersih dan modern, dokter menjelaskan dengan sangat jelas.”
+            </p>
+            <h4 className="font-semibold text-[#3b4f3a]">— Andi P.</h4>
+          </div>
+
         </div>
-      </main>
+      </section>
+
+      {/* ========================= CTA SECTION ========================= */}
+      <section className="py-16 bg-[#3b4f3a] text-white text-center">
+        <h2 className="text-3xl font-semibold mb-4">Siap Memulai Perawatan?</h2>
+        <p className="text-white/80 max-w-xl mx-auto mb-8">
+          Hubungi kami atau lakukan reservasi untuk mendapatkan layanan kesehatan terbaik.
+        </p>
+        <button className="px-6 py-3 bg-white text-[#3b4f3a] rounded-lg shadow-md hover:bg-gray-100 font-semibold">
+          Hubungi Kami
+        </button>
+      </section>
+
     </div>
   );
 }
