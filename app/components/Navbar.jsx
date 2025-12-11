@@ -165,7 +165,7 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/contact" onClick={() => setOpenMobile(false)}>
+          <Link href="/Contact" onClick={() => setOpenMobile(false)}>
             Kontak
           </Link>
         </div>
