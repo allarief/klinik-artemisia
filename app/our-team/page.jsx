@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export default function OurTeamPage() {
   useEffect(() => {
-    const elements = document.querySelectorAll(".reveal");
+    const elements = document.querySelectorAll(".fade-in");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -20,86 +20,114 @@ export default function OurTeamPage() {
     elements.forEach((el) => observer.observe(el));
   }, []);
 
-  // ====================
-  // DATA TEAM (GANTI FOTO DI SINI)
-  // ====================
-  const teamMembers = [
-    {
-      name: "dr. Andini, Sp.A",
-      role: "Dokter Spesialis Anak",
-      image: "/team/tim1.jpg",
-    },
-    {
-      name: "dr. Rani, Sp.OG",
-      role: "Dokter Obstetri & Ginekologi",
-      image: "/team/tim2.jpg",
-    },
-    {
-      name: "dr. Dimas, Sp.GK",
-      role: "Dokter Gizi Klinik",
-      image: "/team/tim3.jpg",
-    },
-    {
-      name: "Siti Wardani, A.Md.Kep",
-      role: "Perawat",
-      image: "/team/tim4.jpg",
-    },
-    {
-      name: "Ira Putri, A.Md.Bid",
-      role: "Bidan",
-      image: "/team/tim5.jpg",
-    },
-    {
-      name: "Laras Sari, S.Farm., Apt",
-      role: "Apoteker",
-      image: "/team/tim6.jpg",
-    },
+  // ==================================
+  // TEAM DATA ASLI
+  // ==================================
+  const dokter = [
+    { img: "/tenagaKaryawan/Slide3.jpg", title: "Dokter Spesialis Gizi", desc: "Membantu memenuhi kebutuhan nutrisi pasien." },
+    { img: "/tenagaKaryawan/Slide5.jpg", title: "Dokter Spesialis Anak", desc: "Perawatan medis terbaik untuk anak-anak." },
+    { img: "/tenagaKaryawan/Slide6.jpg", title: "Dokter Spesialis Anak", desc: "Pendekatan lembut & profesional untuk pasien anak." },
+    { img: "/tenagaKaryawan/Slide8.jpg", title: "Dokter Obstetri & Ginekologi", desc: "Perawatan untuk ibu hamil & kesehatan wanita." },
+    { img: "/tenagaKaryawan/Slide9.jpg", title: "Dokter Obstetri & Ginekologi", desc: "Menangani kesehatan wanita secara menyeluruh." },
   ];
 
-  return (
-    <div className="w-full">
+  const psikolog = [
+    { img: "/tenagaKaryawan/Slide11.jpg", title: "Psikolog Klinis", desc: "Pendampingan profesional untuk kesehatan mental." },
+  ];
 
-      {/* HEADER */}
-      <div className="w-full h-[320px] md:h-[380px] bg-[#c7d5be] flex items-center justify-center text-center px-6 reveal opacity-0 translate-y-6 transition-all duration-700">
+  const bidan = [
+    { img: "/tenagaKaryawan/bdn.jpeg", title: "Bidan", desc: "Pelayanan kebidanan yang aman dan nyaman." },
+    { img: "/tenagaKaryawan/bdn2.jpeg", title: "Bidan", desc: "Pelayanan kebidanan yang aman dan nyaman." },
+  ];
+
+  const staff = [
+    { img: "/tenagaKaryawan/staff.jpeg", title: "Staff Administrasi", desc: "Membantu proses pelayanan dengan profesional." },
+  ];
+
+  const asistenApoteker = [
+    { img: "/tenagaKaryawan/ast_apt.jpeg", title: "Asisten Apoteker", desc: "Melayani penyiapan obat dan membantu konseling pasien mengenai penggunaan obat." },
+  ];
+
+  // ==================================
+  // TEAM + CATEGORY
+  // ==================================
+  const allTeam = [
+    ...dokter.map((i) => ({ ...i, category: "Dokter" })),
+    ...psikolog.map((i) => ({ ...i, category: "Psikolog" })),
+    ...bidan.map((i) => ({ ...i, category: "Bidan" })),
+    ...asistenApoteker.map((i) => ({ ...i, category: "Asisten Apoteker" })),
+    ...staff.map((i) => ({ ...i, category: "Staff" })),
+  ];
+
+  // ==================================
+  // HITUNG FILLER "COMING SOON"
+  // ==================================
+  const remainder = allTeam.length % 3;
+  const fillerCount = remainder === 0 ? 0 : 3 - remainder;
+
+  const fillerCards = Array(fillerCount).fill({
+    img: "/banner/Coming-Soon.png",  // Pastikan buat gambar placeholder: bisa warna hijau polos
+    title: "Tenaga Baru",
+    desc: "Segera Bergabung Dengan Tim Kami.",
+    category: "Coming Soon",
+  });
+
+  const finalTeam = [...allTeam, ...fillerCards];
+
+  // ==================================
+  // CARD COMPONENT
+  // ==================================
+  const Card = ({ item }) => (
+    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 fade-in opacity-0 translate-y-3 duration-700">
+      <div className="relative w-full h-[220px] rounded-xl overflow-hidden bg-[#eef3ed]">
+
+        <span className={`absolute top-3 left-3 text-white text-xs font-medium px-3 py-1 rounded-full shadow-md z-20 ${
+          item.category === "Coming Soon"
+            ? "bg-gray-500"
+            : "bg-[#496b44]/90"
+        }`}>
+          {item.category}
+        </span>
+
+        <Image
+          src={item.img}
+          alt={item.title}
+          fill
+          className={`object-cover object-center w-full h-full transition-all duration-700 ${
+            item.category !== "Coming Soon" ? "hover:scale-[1.03]" : "opacity-70"
+          }`}
+        />
+      </div>
+
+      <h3 className="text-lg md:text-xl font-semibold text-[#2f462c] mt-5 mb-1">
+        {item.title}
+      </h3>
+      <p className="text-[#2f462c] text-sm leading-relaxed">
+        {item.desc}
+      </p>
+    </div>
+  );
+
+  return (
+    <div className="w-full flex flex-col">
+
+      {/* BANNER */}
+      <div className="w-full h-[320px] md:h-[380px] bg-[#c7d5be] flex items-center justify-center text-center px-6 fade-in opacity-0 translate-y-3 transition-all duration-700">
         <h1 className="text-4xl md:text-5xl font-semibold text-[#2f462c] leading-tight">
           Tim <span className="text-[#496b44]">Profesional</span> Kami
         </h1>
       </div>
 
-      {/* DESCRIPTION */}
-      <div className="px-8 md:px-24 py-14 text-center reveal opacity-0 translate-y-6 transition-all duration-700 delay-200">
-        <p className="text-[#2f462c] text-[16px] md:text-[18px] leading-relaxed max-w-3xl mx-auto">
-          Kami memiliki tenaga medis dan tenaga pendukung profesional yang siap memberikan pelayanan terbaik.  
-          Setiap anggota tim memiliki keahlian di bidangnya dan berkomitmen untuk memberikan pengalaman kesehatan terbaik bagi setiap pasien.
-        </p>
-      </div>
+      {/* TEAM LIST */}
+      <section className="px-8 md:px-20 py-16 bg-white">
+        <h2 className="text-3xl md:text-4xl font-semibold text-center text-[#2f462c] mb-12 fade-in opacity-0 translate-y-3">
+          Our <span className="text-[#496b44]">Team</span>
+        </h2>
 
-      {/* TEAM GRID */}
-      <section className="px-8 md:px-24 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-
-          {teamMembers.map((member, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all p-6 reveal opacity-0 translate-y-6"
-              style={{ transitionDuration: "800ms", transitionDelay: `${i * 120}ms` }}
-            >
-              {/* IMAGE */}
-              <div className="relative w-full h-[320px] rounded-xl overflow-hidden mb-6 group">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-
-              {/* TEXT */}
-              <h3 className="text-xl font-semibold text-[#2f462c] mb-1">{member.name}</h3>
-              <p className="text-[#496b44] text-sm font-medium mb-3">{member.role}</p>
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {finalTeam.map((item, i) => (
+            <Card key={i} item={item} />
           ))}
-
         </div>
       </section>
     </div>

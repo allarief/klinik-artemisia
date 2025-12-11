@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Banner from "./components/Banner";
 import AboutSection from "./components/AboutSection";
 
@@ -68,7 +69,6 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
 
-          {/* Testimonial 1 */}
           <div className="bg-white p-8 rounded-xl shadow">
             <p className="text-gray-700 italic mb-4">
               “Pelayanan sangat ramah dan profesional. Saya merasa sangat terbantu!”
@@ -76,7 +76,6 @@ export default function Home() {
             <h4 className="font-semibold text-[#3b4f3a]">— Maria L.</h4>
           </div>
 
-          {/* Testimonial 2 */}
           <div className="bg-white p-8 rounded-xl shadow">
             <p className="text-gray-700 italic mb-4">
               “Kliniknya bersih dan modern, dokter menjelaskan dengan sangat jelas.”
@@ -93,9 +92,13 @@ export default function Home() {
         <p className="text-white/80 max-w-xl mx-auto mb-8">
           Hubungi kami atau lakukan reservasi untuk mendapatkan layanan kesehatan terbaik.
         </p>
-        <button className="px-6 py-3 bg-white text-[#3b4f3a] rounded-lg shadow-md hover:bg-gray-100 font-semibold">
+
+        <Link
+          href="/Contact"
+          className="px-6 py-3 bg-white text-[#3b4f3a] rounded-lg shadow-md hover:bg-gray-100 font-semibold inline-block"
+        >
           Hubungi Kami
-        </button>
+        </Link>
       </section>
 
     </div>

@@ -16,47 +16,49 @@ const doctors = [
 
 const page = () => {
   return (
-    <div>
-      {/* BANNER SECTION */}
-      <section className="w-full grid grid-cols-1 md:grid-cols-2">
-        <div className="bg-[#c7d5be] px-10 md:px-20 py-16 md:py-24 flex flex-col justify-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] mb-6">
-            <span className="text-[#496b44]">Layanan Kesehatan Anak</span>
-          </h2>
+    <div className="w-full">
 
-          <p className="text-[#2f462c] leading-relaxed">
-            Kami menyediakan layanan kesehatan khusus anak dengan pendekatan ramah dan profesional,
-            memastikan anak merasa aman dan nyaman selama proses perawatan.
-          </p>
+      {/* ====================================== */}
+      {/*         BANNER PROFESIONAL           */}
+      {/* ====================================== */}
+      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px]">
+
+        {/* Blurred Background */}
+        <Image
+          src="/layanan/Slide4.jpeg"
+          alt="Banner Background"
+          fill
+          className="object-cover blur-sm scale-110 opacity-80"
+        />
+
+        {/* Foreground Clear Image */}
+        <div className="absolute inset-0 flex items-center justify-center p-6">
+          <div className="relative w-full max-w-5xl h-full">
+            <Image
+              src="/layanan/Slide4.jpeg"
+              alt="Banner Foreground"
+              fill
+              className="object-contain drop-shadow-xl"
+            />
+          </div>
         </div>
+      </div>
 
-        <div className="relative w-full min-h-[150px] md:min-h-[550px]">
-          <Image
-            src="/layanan/Slide4.jpeg"
-            alt="Layanan anak"
-            fill
-            className="object-cover object-center"
-          />
-        </div>
-      </section>
-
-      {/* ============================ */}
-      {/*    KONSUL DOKTER SPESIALIS   */}
-      {/* ============================ */}
+      {/* ====================================== */}
+      {/*      KONSULTASI DOKTER SPESIALIS       */}
+      {/* ====================================== */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
         <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] text-center mb-14">
           Konsul Dokter Spesialis Anak
         </h2>
 
-        {/* CARD DOKTER – tidak memotong foto */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {doctors.map((doc, i) => (
             <div
               key={i}
               className="bg-white shadow-lg rounded-2xl p-6 flex gap-6 items-center hover:shadow-xl transition"
             >
-              {/* FOTO MENGGUNAKAN object-contain AGAR TIDAK TERPOTONG */}
-              <div className="relative w-40 h-40 bg-[#f3f3f3] rounded-xl flex items-center justify-center overflow-hidden">
+              <div className="relative w-40 h-40 bg-[#f9f9f9] rounded-xl flex items-center justify-center overflow-hidden">
                 <Image
                   src={doc.image}
                   alt={doc.name}
@@ -75,12 +77,12 @@ const page = () => {
           ))}
         </div>
 
-        {/* ======================= */}
-        {/*      RUANG PERIKSA      */}
-        {/* ======================= */}
+        {/* ====================================== */}
+        {/*               RUANG PERIKSA            */}
+        {/* ====================================== */}
         <div className="mt-20 bg-white shadow-lg rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          {/* FOTO LEBIH BESAR & SANGAT RAPI */}
+          {/* FOTO */}
           <div className="relative w-full h-[420px] md:h-[560px] rounded-xl overflow-hidden">
             <Image
               src="/pemeriksaan/periksa1.jpeg"
@@ -90,6 +92,7 @@ const page = () => {
             />
           </div>
 
+          {/* DESKRIPSI */}
           <div>
             <h3 className="text-2xl font-semibold text-[#496b44] mb-4">
               Ruang Konsultasi Nyaman
@@ -101,7 +104,9 @@ const page = () => {
             </p>
           </div>
         </div>
+
       </section>
+
     </div>
   );
 };

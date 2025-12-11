@@ -3,10 +3,9 @@
 import Image from "next/image";
 import { useEffect } from "react";
 
-export default function OurTeamPage() {
-  // Fade-in animation
+export default function AboutPage() {
   useEffect(() => {
-    const elements = document.querySelectorAll(".fade-in");
+    const elements = document.querySelectorAll(".reveal");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -21,79 +20,14 @@ export default function OurTeamPage() {
     elements.forEach((el) => observer.observe(el));
   }, []);
 
-  // =============================
-  // TEAM DATA
-  // =============================
-  const dokter = [
-    { img: "/tenagaKaryawan/Slide3.jpg", title: "Dokter Spesialis Gizi", desc: "Membantu memenuhi kebutuhan nutrisi pasien." },
-    { img: "/tenagaKaryawan/Slide5.jpg", title: "Dokter Spesialis Anak", desc: "Perawatan medis terbaik untuk anak-anak." },
-    { img: "/tenagaKaryawan/Slide6.jpg", title: "Dokter Spesialis Anak", desc: "Pendekatan lembut & profesional untuk pasien anak." },
-    { img: "/tenagaKaryawan/Slide8.jpg", title: "Dokter Obstetri & Ginekologi", desc: "Perawatan untuk ibu hamil & kesehatan wanita." },
-    { img: "/tenagaKaryawan/Slide9.jpg", title: "Dokter Obstetri & Ginekologi", desc: "Menangani kesehatan wanita secara menyeluruh." },
-  ];
-
-  const psikolog = [
-    { img: "/tenagaKaryawan/Slide11.jpg", title: "Psikolog Klinis", desc: "Pendampingan profesional untuk kesehatan mental." },
-  ];
-
-  const bidan = [
-    { img: "/tenagaKaryawan/bdn.jpeg", title: "Bidan", desc: "Pelayanan kebidanan yang aman dan nyaman." },
-    { img: "/tenagaKaryawan/bdn2.jpeg", title: "Bidan", desc: "Pelayanan kebidanan yang aman dan nyaman." },
-  ];
-
-  const staff = [
-    { img: "/tenagaKaryawan/staff.jpeg", title: "Staff Administrasi", desc: "Membantu proses pelayanan dengan profesional." },
-  ];
-
-  // ===================================
-  // ⭐ NEW: ASISTEN APOTEKER CATEGORY
-  // ===================================
-  const asistenApoteker = [
-    { img: "/tenagaKaryawan/ast_apt.jpeg", title: "Asisten Apoteker", desc: "Melayani penyiapan obat dan membantu konseling pasien mengenai penggunaan obat." },
-    
-  ];
-
-  const allTeam = [
-    ...dokter.map((i) => ({ ...i, category: "Dokter" })),
-    ...psikolog.map((i) => ({ ...i, category: "Psikolog" })),
-    ...bidan.map((i) => ({ ...i, category: "Bidan" })),
-    ...asistenApoteker.map((i) => ({ ...i, category: "Asisten Apoteker" })), // ⬅️ DITAMBAHKAN
-    ...staff.map((i) => ({ ...i, category: "Staff" })),
-  ];
-
-  // =============================
-  // CARD COMPONENT
-  // =============================
-  const Card = ({ item }) => (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition p-6 fade-in opacity-0 translate-y-3 duration-700">
-      <div className="relative w-full h-[220px] rounded-xl overflow-hidden bg-[#eef3ed]">
-        <span className="absolute top-3 left-3 bg-[#496b44]/90 text-white text-xs font-medium px-3 py-1 rounded-full shadow-md z-20">
-          {item.category}
-        </span>
-
-        <div className="absolute top-0 left-0 w-full h-14 bg-gradient-to-b from-white/50 to-transparent z-10"></div>
-
-        <Image
-          src={item.img}
-          alt={item.title}
-          fill
-          className="object-cover object-center w-full h-full transition-all duration-700 hover:scale-[1.03]"
-        />
-      </div>
-
-      <h3 className="text-lg md:text-xl font-semibold text-[#2f462c] mt-5 mb-1">
-        {item.title}
-      </h3>
-      <p className="text-[#2f462c] text-sm leading-relaxed">{item.desc}</p>
-    </div>
-  );
-
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full">
 
-      {/* BANNER SECTION */}
-      <section className="w-full grid grid-cols-1 md:grid-cols-2">
-        <div className="bg-[#c7d5be] px-10 md:px-20 py-16 md:py-24 flex flex-col justify-center fade-in opacity-0 translate-y-3">
+      {/* ================================
+          BANNER (Tetap codingan lama)
+      ================================= */}
+      <section className="w-full grid grid-cols-1 md:grid-cols-2 reveal opacity-0 translate-y-6 transition-all duration-700">
+        <div className="bg-[#c7d5be] px-10 md:px-20 py-16 md:py-24 flex flex-col justify-center">
           <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] mb-6">
             Tentang <span className="text-[#496b44]">Klinik Kami</span>
           </h2>
@@ -105,7 +39,7 @@ export default function OurTeamPage() {
           </div>
         </div>
 
-        <div className="relative w-full min-h-[450px] md:min-h-[650px] fade-in opacity-0 translate-y-3">
+        <div className="relative w-full min-h-[350px] md:min-h-[450px]">
           <Image
             src="/aboutsection.jpeg"
             alt="Clinic Interior"
@@ -115,16 +49,100 @@ export default function OurTeamPage() {
         </div>
       </section>
 
-      {/* TEAM LIST */}
-      <section className="px-8 md:px-20 py-16 bg-white">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center text-[#2f462c] mb-12 fade-in opacity-0 translate-y-3">
-          Our <span className="text-[#496b44]">Team</span>
+      {/* ================================
+          DESCRIPTION (Codingan lama)
+      ================================= */}
+      <div className="px-8 md:px-24 py-14 text-center reveal opacity-0 translate-y-6 transition-all duration-700 delay-200">
+        <p className="text-[#2f462c] text-[16px] md:text-[18px] leading-relaxed max-w-3xl mx-auto">
+          Klinik Artemisia berdedikasi untuk memberikan layanan kesehatan modern yang
+          berkualitas tinggi dengan pendekatan yang humanis dan personal. Kami percaya
+          bahwa setiap pasien berhak mendapatkan perawatan terbaik dalam suasana yang
+          nyaman dan ramah.
+        </p>
+      </div>
+
+      {/* ================================
+          PROFIL OWNER (AI PROFILE)
+      ================================= */}
+      <section className="py-20 px-6 md:px-24 bg-white reveal opacity-0 translate-y-6 transition-all duration-700 delay-300">
+        <h2 className="text-3xl font-bold text-center text-[#2f462c] mb-12">
+          Profil Owner
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {allTeam.map((item, i) => (
-            <Card key={i} item={item} />
-          ))}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+          {/* Foto AI Owner */}
+          <div className="relative w-full h-[350px] rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="/tenagaKaryawan/owner.jpg" // Ganti dengan foto AI
+              alt="Owner Profile"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Informasi Owner */}
+          <div className="space-y-4 text-[#2f462c]">
+            <h3 className="text-2xl font-semibold">Albertus</h3>
+            <p className="text-[15px] leading-relaxed">
+              Founder & Head Medical Director dari <strong>Klinik Artemisia</strong>, 
+              dengan pengalaman lebih dari 12 tahun di dunia kesehatan modern dan manajemen klinik.
+            </p>
+
+            <div className="mt-6">
+              <h4 className="text-lg font-bold mb-2">Pendidikan</h4>
+              <ul className="list-disc pl-5 space-y-1 text-[15px]">
+                <li>Dokter Umum – Universitas Indonesia (UI)</li>
+                <li>Magister Manajemen Rumah Sakit – Universitas Gadjah Mada (UGM)</li>
+                <li>Certified Healthcare Leadership – Singapore Medical Board</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================
+          HISTORY KLINIK
+      ================================= */}
+      <section className="py-20 px-6 md:px-24 bg-[#f3f6f1] reveal opacity-0 translate-y-6 transition-all duration-700 delay-400">
+        <h2 className="text-3xl font-bold text-center text-[#2f462c] mb-10">
+          Sejarah Klinik
+        </h2>
+
+        <p className="max-w-4xl mx-auto text-center text-[#2f462c] text-[16px] leading-relaxed">
+          Klinik Artemisia berdiri pada tahun <strong>2014</strong> dengan visi untuk memberikan layanan kesehatan
+          modern yang dapat diakses oleh semua lapisan masyarakat. Dimulai dari sebuah klinik kecil, kini telah berkembang
+          menjadi fasilitas kesehatan lengkap dengan berbagai layanan unggulan.
+        </p>
+      </section>
+
+      {/* ================================
+          VISI & MISI
+      ================================= */}
+      <section className="py-20 px-6 md:px-24 bg-white reveal opacity-0 translate-y-6 transition-all duration-700 delay-500">
+        <h2 className="text-3xl font-bold text-center text-[#2f462c] mb-10">Visi & Misi</h2>
+
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+
+          {/* Visi */}
+          <div className="bg-green-100 p-8 rounded-xl shadow">
+            <h3 className="text-xl font-bold text-[#2f462c] mb-4">Visi</h3>
+            <p className="text-[#2f462c] leading-relaxed">
+              Menjadi klinik kesehatan modern yang memberikan pelayanan terbaik, humanis, dan berfokus pada kenyamanan pasien.
+            </p>
+          </div>
+
+          {/* Misi */}
+          <div className="bg-green-100 p-8 rounded-xl shadow">
+            <h3 className="text-xl font-bold text-[#2f462c] mb-4">Misi</h3>
+            <ul className="list-disc pl-5 space-y-2 text-[#2f462c] leading-relaxed">
+              <li>Menyediakan layanan kesehatan profesional dan terpercaya.</li>
+              <li>Menggunakan teknologi modern untuk mendukung proses medis.</li>
+              <li>Mengutamakan keramahan dan kenyamanan pasien.</li>
+              <li>Mendukung edukasi kesehatan kepada masyarakat.</li>
+            </ul>
+          </div>
+
         </div>
       </section>
     </div>

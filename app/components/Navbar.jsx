@@ -45,12 +45,12 @@ export default function Navbar() {
             Artikel
           </Link>
 
-          <Link href="/aboutus" className="text-[#3c5a40] hover:text-[#6f806c]">
-            Tentang Kami
-          </Link>
-
           <Link href="/our-team" className="text-[#3c5a40] hover:text-[#6f806c]">
             Tim Kami
+          </Link>
+
+          <Link href="/aboutus" className="text-[#3c5a40] hover:text-[#6f806c]">
+            Tentang Kami
           </Link>
 
           {/* DESKTOP DROPDOWN */}
@@ -85,7 +85,7 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/contact" className="text-[#3c5a40] hover:text-[#6f806c]">
+          <Link href="/Contact" className="text-[#3c5a40] hover:text-[#6f806c]">
             Kontak
           </Link>
         </div>

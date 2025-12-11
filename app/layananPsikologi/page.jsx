@@ -11,46 +11,49 @@ const doctors = [
 
 const page = () => {
   return (
-    <div>
-      {/* BANNER SECTION */}
-      <section className="w-full grid grid-cols-1 md:grid-cols-2">
-        <div className="bg-[#c7d5be] px-10 md:px-20 py-16 md:py-24 flex flex-col justify-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] mb-6">
-            <span className="text-[#496b44]">Layanan Psikologi</span>
-          </h2>
+    <div className="w-full">
 
-          <p className="text-[#2f462c] leading-relaxed">
-            Kami menyediakan layanan psikologi untuk mendukung kesehatan mental ibu dan anak,
-            dengan pendekatan personal dan berbasis bukti ilmiah.
-          </p>
+      {/* ====================================== */}
+      {/*         BANNER PROFESIONAL BLUR        */}
+      {/* ====================================== */}
+      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px]">
+
+        {/* Background Blur */}
+        <Image
+          src="/layanan/Slide10.jpeg"
+          alt="Layanan Psikologi Background"
+          fill
+          className="object-cover blur-sm scale-110 opacity-80"
+        />
+
+        {/* Foreground Clear */}
+        <div className="absolute inset-0 flex items-center justify-center p-6">
+          <div className="relative w-full max-w-5xl h-full">
+            <Image
+              src="/layanan/Slide10.jpeg"
+              alt="Layanan Psikologi Foreground"
+              fill
+              className="object-contain drop-shadow-xl"
+            />
+          </div>
         </div>
+      </div>
 
-        <div className="relative w-full min-h-[150px] md:min-h-[550px]">
-          <Image
-            src="/layanan/Slide10.jpeg"
-            alt="Layanan psikologi"
-            fill
-            className="object-cover object-center"
-          />
-        </div>
-      </section>
-
-      {/* ============================ */}
-      {/*    KONSUL DOKTER SPESIALIS   */}
-      {/* ============================ */}
+      {/* ====================================== */}
+      {/*        KONSULTASI PSIKOLOG SPESIALIS   */}
+      {/* ====================================== */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
         <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] text-center mb-14">
           Konsul Psikolog Spesialis
         </h2>
 
-        {/* CARD DOKTER — FULL CENTER & FOTO TIDAK TERPOTONG */}
+        {/* CARD PSIKOLOG */}
         <div className="grid grid-cols-1 gap-10 place-items-center w-full">
           {doctors.map((doc, i) => (
             <div
               key={i}
               className="bg-white shadow-lg rounded-2xl p-6 flex gap-6 items-center hover:shadow-xl transition w-full max-w-xl"
             >
-              {/* FOTO FULL TANPA TERPOTONG */}
               <div className="relative w-48 h-48 rounded-2xl overflow-hidden bg-[#f6f6f6] flex items-center justify-center">
                 <Image
                   src={doc.image}
@@ -72,12 +75,12 @@ const page = () => {
           ))}
         </div>
 
-        {/* ======================= */}
-        {/*      RUANG PERIKSA      */}
-        {/* ======================= */}
+        {/* ====================================== */}
+        {/*               RUANG PERIKSA            */}
+        {/* ====================================== */}
         <div className="mt-20 bg-white shadow-lg rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          {/* FOTO RUANG PERIKSA BESAR */}
+          {/* FOTO RUANG PERIKSA */}
           <div className="relative w-full h-[420px] md:h-[560px] rounded-xl overflow-hidden">
             <Image
               src="/pemeriksaan/periksa2.jpeg"

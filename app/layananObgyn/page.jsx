@@ -16,56 +16,62 @@ const doctors = [
 
 const page = () => {
   return (
-    <div>
-      {/* BANNER SECTION */}
-      <section className="w-full grid grid-cols-1 md:grid-cols-2">
-        <div className="bg-[#c7d5be] px-10 md:px-20 py-16 md:py-24 flex flex-col justify-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] mb-6">
-            <span className="text-[#496b44]">Layanan Kesehatan Ob Gyn</span>
-          </h2>
+    <div className="w-full">
 
-          <p className="text-[#2f462c] leading-relaxed">
-            Kami menyediakan layanan kesehatan Ob Gyn yang komprehensif dan berkualitas tinggi untuk mendukung kesehatan wanita di setiap tahap kehidupan mereka.
-          </p>
+      {/* ====================================== */}
+      {/*         BANNER PROFESIONAL BLUR        */}
+      {/* ====================================== */}
+      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px]">
+
+        {/* Background Blur */}
+        <Image
+          src="/layanan/Slide7.jpeg"
+          alt="Layanan Obgyn Background"
+          fill
+          className="object-cover blur-sm scale-110 opacity-80"
+        />
+
+        {/* Foreground Clear */}
+        <div className="absolute inset-0 flex items-center justify-center p-6">
+          <div className="relative w-full max-w-5xl h-full">
+            <Image
+              src="/layanan/Slide7.jpeg"
+              alt="Layanan Obgyn Foreground"
+              fill
+              className="object-contain drop-shadow-xl"
+            />
+          </div>
         </div>
+      </div>
 
-        <div className="relative w-full min-h-[150px] md:min-h-[550px]">
-          <Image
-            src="/layanan/Slide7.jpeg"
-            alt="Layanan Ob Gyn"
-            fill
-            className="object-cover object-center"
-          />
-        </div>
-      </section>
-
-      {/* ============================ */}
-      {/*    KONSUL DOKTER SPESIALIS   */}
-      {/* ============================ */}
+      {/* ====================================== */}
+      {/*     KONSULTASI DOKTER SPESIALIS OBGYN  */}
+      {/* ====================================== */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
         <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] text-center mb-14">
           Konsul Dokter Spesialis Ob Gyn
         </h2>
 
-        {/* CARD DOKTER – tidak memotong foto */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* CARD DOKTER */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 place-items-center w-full">
           {doctors.map((doc, i) => (
             <div
               key={i}
-              className="bg-white shadow-lg rounded-2xl p-6 flex gap-6 items-center hover:shadow-xl transition"
+              className="bg-white shadow-lg rounded-2xl p-6 flex gap-6 items-center hover:shadow-xl transition w-full max-w-xl"
             >
-              {/* FOTO MENGGUNAKAN object-contain AGAR TIDAK TERPOTONG */}
-              <div className="relative w-40 h-40 bg-[#f3f3f3] rounded-xl flex items-center justify-center overflow-hidden">
+              <div className="relative w-48 h-48 rounded-2xl overflow-hidden bg-[#f6f6f6] flex items-center justify-center">
                 <Image
                   src={doc.image}
                   alt={doc.name}
                   fill
-                  className="object-contain p-2"
+                  className="object-contain p-3"
                 />
               </div>
 
               <div className="flex-1">
-                <h3 className="text-xl font-semibold text-[#496b44]">{doc.name}</h3>
+                <h3 className="text-xl font-semibold text-[#496b44]">
+                  {doc.name}
+                </h3>
                 <p className="text-[#2f462c] leading-relaxed text-sm mt-2">
                   {doc.desc}
                 </p>
@@ -74,12 +80,12 @@ const page = () => {
           ))}
         </div>
 
-        {/* ======================= */}
-        {/*      RUANG PERIKSA      */}
-        {/* ======================= */}
+        {/* ====================================== */}
+        {/*               RUANG PERIKSA            */}
+        {/* ====================================== */}
         <div className="mt-20 bg-white shadow-lg rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          {/* FOTO LEBIH BESAR & SANGAT RAPI */}
+          {/* FOTO RUANG PERIKSA */}
           <div className="relative w-full h-[420px] md:h-[560px] rounded-xl overflow-hidden">
             <Image
               src="/pemeriksaan/periksa4.jpeg"
