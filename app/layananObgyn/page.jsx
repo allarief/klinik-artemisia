@@ -19,28 +19,19 @@ const page = () => {
     <div className="w-full">
 
       {/* ====================================== */}
-      {/*         BANNER PROFESIONAL BLUR        */}
+      {/*     BANNER PROFESIONAL (BACKGR COLOR)  */}
       {/* ====================================== */}
-      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px]">
-
-        {/* Background Blur */}
-        <Image
-          src="/layanan/Slide7.jpeg"
-          alt="Layanan Obgyn Background"
-          fill
-          className="object-cover blur-sm scale-110 opacity-80"
-        />
+      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] 
+                      bg-[#c7d5be] flex items-center justify-center">
 
         {/* Foreground Clear */}
-        <div className="absolute inset-0 flex items-center justify-center p-6">
-          <div className="relative w-full max-w-5xl h-full">
-            <Image
-              src="/layanan/Slide7.jpeg"
-              alt="Layanan Obgyn Foreground"
-              fill
-              className="object-contain drop-shadow-xl"
-            />
-          </div>
+        <div className="relative w-full max-w-5xl h-full p-6 flex items-center justify-center">
+          <Image
+            src="/layanan/Slide7.jpeg"
+            alt="Layanan Obgyn Foreground"
+            fill
+            className="object-contain drop-shadow-xl"
+          />
         </div>
       </div>
 

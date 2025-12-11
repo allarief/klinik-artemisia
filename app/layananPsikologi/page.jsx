@@ -3,9 +3,9 @@ import Image from "next/image";
 
 const doctors = [
   {
-    name: "Octavia Putri, M.Psi , Psikolog",
+    name: "dr. Octavia Putri, M.Psi,",
     image: "/tenagaKaryawan/Slide11.jpg",
-    desc: "Psikolog berpengalaman dalam memberikan layanan psikologi untuk mendukung kesehatan mental ibu dan anak dengan pendekatan yang empatik dan berbasis bukti ilmiah."
+    desc: "Dokter spesialis obstetri dan ginekologi yang berpengalaman dalam menangani kesehatan reproduksi wanita, kehamilan, serta masalah ginekologi dengan pendekatan yang ramah dan profesional."
   },
 ];
 
@@ -14,40 +14,31 @@ const page = () => {
     <div className="w-full">
 
       {/* ====================================== */}
-      {/*         BANNER PROFESIONAL BLUR        */}
+      {/*         BANNER PROFESIONAL (NO BLUR)   */}
       {/* ====================================== */}
-      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px]">
+      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] 
+                      bg-[#c7d5be] flex items-center justify-center">
 
-        {/* Background Blur */}
-        <Image
-          src="/layanan/Slide10.jpeg"
-          alt="Layanan Psikologi Background"
-          fill
-          className="object-cover blur-sm scale-110 opacity-80"
-        />
-
-        {/* Foreground Clear */}
-        <div className="absolute inset-0 flex items-center justify-center p-6">
-          <div className="relative w-full max-w-5xl h-full">
-            <Image
-              src="/layanan/Slide10.jpeg"
-              alt="Layanan Psikologi Foreground"
-              fill
-              className="object-contain drop-shadow-xl"
-            />
-          </div>
+        {/* Foreground Clear Image */}
+        <div className="relative w-full max-w-5xl h-full p-6 flex items-center justify-center">
+          <Image
+            src="/layanan/Slide10.jpeg"
+            alt="Layanan OBGYN Foreground"
+            fill
+            className="object-contain drop-shadow-xl"
+          />
         </div>
       </div>
 
       {/* ====================================== */}
-      {/*        KONSULTASI PSIKOLOG SPESIALIS   */}
+      {/*        KONSULTASI DOKTER SPESIALIS     */}
       {/* ====================================== */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
         <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] text-center mb-14">
-          Konsul Psikolog Spesialis
+          Konsul Dokter Spesialis OBGYN
         </h2>
 
-        {/* CARD PSIKOLOG */}
+        {/* CARD DOKTER */}
         <div className="grid grid-cols-1 gap-10 place-items-center w-full">
           {doctors.map((doc, i) => (
             <div
@@ -83,7 +74,7 @@ const page = () => {
           {/* FOTO RUANG PERIKSA */}
           <div className="relative w-full h-[420px] md:h-[560px] rounded-xl overflow-hidden">
             <Image
-              src="/pemeriksaan/periksa2.jpeg"
+              src="/pemeriksaan/periksa3.jpeg"
               alt="Ruang Konsultasi"
               fill
               className="object-cover"
@@ -95,9 +86,9 @@ const page = () => {
               Ruang Konsultasi Nyaman
             </h3>
             <p className="text-[#2f462c] leading-relaxed">
-              Ruang konsultasi dirancang dengan suasana yang bersih, rapi, serta ramah bagi anak. 
-              Area yang nyaman membantu anak lebih tenang dan mendukung proses konsultasi yang efektif 
-              antara dokter, orang tua, dan pasien.
+              Ruang konsultasi dirancang untuk memberikan kenyamanan maksimal bagi pasien wanita. 
+              Dengan suasana tenang dan fasilitas modern, proses pemeriksaan dan konsultasi berjalan 
+              lebih nyaman, aman, dan mendukung komunikasi yang efektif antara dokter dan pasien.
             </p>
           </div>
         </div>

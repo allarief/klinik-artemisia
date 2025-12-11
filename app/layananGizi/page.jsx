@@ -14,28 +14,19 @@ const page = () => {
     <div className="w-full">
 
       {/* ====================================== */}
-      {/*         BANNER PROFESIONAL BLUR        */}
+      {/*         BANNER PROFESIONAL (NO BLUR)   */}
       {/* ====================================== */}
-      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px]">
+      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] 
+                      bg-[#c7d5be] flex items-center justify-center">
 
-        {/* Background Blur */}
-        <Image
-          src="/layanan/Slide2.jpeg"
-          alt="Layanan Gizi Background"
-          fill
-          className="object-cover blur-sm scale-110 opacity-80"
-        />
-
-        {/* Foreground Clear */}
-        <div className="absolute inset-0 flex items-center justify-center p-6">
-          <div className="relative w-full max-w-5xl h-full">
-            <Image
-              src="/layanan/Slide2.jpeg"
-              alt="Layanan Gizi Foreground"
-              fill
-              className="object-contain drop-shadow-xl"
-            />
-          </div>
+        {/* Foreground Clear Image */}
+        <div className="relative w-full max-w-5xl h-full p-6 flex items-center justify-center">
+          <Image
+            src="/layanan/Slide2.jpeg"
+            alt="Layanan Gizi Foreground"
+            fill
+            className="object-contain drop-shadow-xl"
+          />
         </div>
       </div>
 
@@ -83,7 +74,7 @@ const page = () => {
           {/* FOTO RUANG PERIKSA */}
           <div className="relative w-full h-[420px] md:h-[560px] rounded-xl overflow-hidden">
             <Image
-              src="/pemeriksaan/periksa3.jpeg"
+              src="/pemeriksaan/periksa2.jpeg"
               alt="Ruang Konsultasi"
               fill
               className="object-cover"
