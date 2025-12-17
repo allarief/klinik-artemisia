@@ -24,7 +24,7 @@ export default function AboutPage() {
     <div className="w-full">
 
       {/* ================================
-          BANNER (Tetap codingan lama)
+          BANNER
       ================================= */}
       <section className="w-full grid grid-cols-1 md:grid-cols-2 reveal opacity-0 translate-y-6 transition-all duration-700">
         <div className="bg-[#c7d5be] px-10 md:px-20 py-16 md:py-24 flex flex-col justify-center">
@@ -41,7 +41,7 @@ export default function AboutPage() {
 
         <div className="relative w-full min-h-[350px] md:min-h-[450px]">
           <Image
-            src="/bgabout.jpeg"
+            src="/bgabout1.jpeg"
             alt="Clinic Interior"
             fill
             className="object-cover object-center"
@@ -50,7 +50,7 @@ export default function AboutPage() {
       </section>
 
       {/* ================================
-          DESCRIPTION (Codingan lama)
+          DESCRIPTION
       ================================= */}
       <div className="px-8 md:px-24 py-14 text-center reveal opacity-0 translate-y-6 transition-all duration-700 delay-200">
         <p className="text-[#2f462c] text-[16px] md:text-[18px] leading-relaxed max-w-3xl mx-auto">
@@ -62,7 +62,7 @@ export default function AboutPage() {
       </div>
 
       {/* ================================
-          PROFIL OWNER (AI PROFILE)
+          PROFIL OWNER
       ================================= */}
       <section className="py-20 px-6 md:px-24 bg-white reveal opacity-0 translate-y-6 transition-all duration-700 delay-300">
         <h2 className="text-3xl font-bold text-center text-[#2f462c] mb-12">
@@ -71,21 +71,19 @@ export default function AboutPage() {
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          {/* Foto AI Owner */}
           <div className="relative w-full h-[350px] rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/tenagaKaryawan/owner.jpg" // Ganti dengan foto AI
+              src="/tenagaKaryawan/owner.jpg"
               alt="Owner Profile"
               fill
               className="object-cover"
             />
           </div>
 
-          {/* Informasi Owner */}
           <div className="space-y-4 text-[#2f462c]">
             <h3 className="text-2xl font-semibold">Albertus</h3>
             <p className="text-[15px] leading-relaxed">
-              Founder & Head Medical Director dari <strong>Klinik Artemisia</strong>, 
+              Founder & Head Medical Director dari <strong>Klinik Artemisia</strong>,
               dengan pengalaman lebih dari 12 tahun di dunia kesehatan modern dan manajemen klinik.
             </p>
 
@@ -102,7 +100,7 @@ export default function AboutPage() {
       </section>
 
       {/* ================================
-          HISTORY KLINIK
+          SEJARAH KLINIK
       ================================= */}
       <section className="py-20 px-6 md:px-24 bg-[#f3f6f1] reveal opacity-0 translate-y-6 transition-all duration-700 delay-400">
         <h2 className="text-3xl font-bold text-center text-[#2f462c] mb-10">
@@ -110,29 +108,54 @@ export default function AboutPage() {
         </h2>
 
         <p className="max-w-4xl mx-auto text-center text-[#2f462c] text-[16px] leading-relaxed">
-          Klinik Artemisia berdiri pada tahun <strong>2014</strong> dengan visi untuk memberikan layanan kesehatan
+          Klinik Artemisia berdiri pada tahun <strong>2021</strong> dengan visi untuk memberikan layanan kesehatan
           modern yang dapat diakses oleh semua lapisan masyarakat. Dimulai dari sebuah klinik kecil, kini telah berkembang
           menjadi fasilitas kesehatan lengkap dengan berbagai layanan unggulan.
         </p>
       </section>
 
       {/* ================================
+          IMAGE SEJARAH (BARU)
+      ================================= */}
+      <section className="pb-20 px-6 md:px-24 bg-[#f3f6f1] reveal opacity-0 translate-y-6 transition-all duration-700 delay-450">
+        <div className="max-w-5xl mx-auto">
+
+          <div className="relative w-full h-[260px] md:h-[420px] rounded-2xl overflow-hidden shadow-xl">
+            <Image
+              src="/aboutus2.jpeg" // ⬅️ GANTI dengan image kamu
+              alt="Sejarah Klinik Artemisia"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          <p className="mt-6 text-center text-[#2f462c] text-[14px] md:text-[15px] leading-relaxed max-w-3xl mx-auto">
+            Perjalanan Klinik Artemisia dari awal berdiri hingga berkembang menjadi
+            fasilitas layanan kesehatan yang terpercaya bagi masyarakat.
+          </p>
+
+        </div>
+      </section>
+
+      {/* ================================
           VISI & MISI
       ================================= */}
       <section className="py-20 px-6 md:px-24 bg-white reveal opacity-0 translate-y-6 transition-all duration-700 delay-500">
-        <h2 className="text-3xl font-bold text-center text-[#2f462c] mb-10">Visi & Misi</h2>
+        <h2 className="text-3xl font-bold text-center text-[#2f462c] mb-10">
+          Visi & Misi
+        </h2>
 
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
 
-          {/* Visi */}
           <div className="bg-green-100 p-8 rounded-xl shadow">
             <h3 className="text-xl font-bold text-[#2f462c] mb-4">Visi</h3>
             <p className="text-[#2f462c] leading-relaxed">
-              Menjadi klinik kesehatan modern yang memberikan pelayanan terbaik, humanis, dan berfokus pada kenyamanan pasien.
+              Menjadi klinik kesehatan modern yang memberikan pelayanan terbaik,
+              humanis, dan berfokus pada kenyamanan pasien.
             </p>
           </div>
 
-          {/* Misi */}
           <div className="bg-green-100 p-8 rounded-xl shadow">
             <h3 className="text-xl font-bold text-[#2f462c] mb-4">Misi</h3>
             <ul className="list-disc pl-5 space-y-2 text-[#2f462c] leading-relaxed">
