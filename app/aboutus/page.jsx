@@ -41,7 +41,7 @@ export default function AboutPage() {
 
         <div className="relative w-full min-h-[350px] md:min-h-[450px]">
           <Image
-            src="/aboutsection.jpeg"
+            src="/bgabout.jpeg"
             alt="Clinic Interior"
             fill
             className="object-cover object-center"

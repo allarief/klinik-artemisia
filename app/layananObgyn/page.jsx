@@ -4,12 +4,12 @@ import Image from "next/image";
 const doctors = [
   {
     name: "dr. Mervinna Giovanni, M.Biomed ,Sp.OG",
-    image: "/tenagaKaryawan/Slide8.jpg",
+    image: "/tenagaKaryawan/dokterlayanan5.jpeg",
     desc: "Dokter spesialis Obgyn dengan pengalaman luas dalam menangani berbagai kondisi kesehatan wanita."
   },
   {
     name: "dr. Ratih Puty, Sp.OG",
-    image: "/tenagaKaryawan/Slide5.jpg",
+    image: "/tenagaKaryawan/dokterlayanan6.png",
     desc: "Dokter spesialis Obgyn yang berdedikasi dalam memberikan perawatan terbaik untuk kesehatan reproduksi wanita."
   }
 ];

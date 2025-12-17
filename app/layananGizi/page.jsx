@@ -4,7 +4,7 @@ import Image from "next/image";
 const doctors = [
   {
     name: "dr. Patricia Amanda, M.Gizi , Sp.GK",
-    image: "/tenagaKaryawan/Slide3.jpg",
+    image: "/tenagaKaryawan/dokterlayanan3.jpeg",
     desc: "Dokter spesialis gizi dengan keahlian dalam memberikan konsultasi gizi untuk mendukung kesehatan ibu dan anak secara personal dan berbasis bukti ilmiah."
   },
 ];

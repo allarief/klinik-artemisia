@@ -4,8 +4,8 @@ import Image from "next/image";
 const doctors = [
   {
     name: "dr. Octavia Putri, M.Psi,",
-    image: "/tenagaKaryawan/Slide11.jpg",
-    desc: "Dokter spesialis obstetri dan ginekologi yang berpengalaman dalam menangani kesehatan reproduksi wanita, kehamilan, serta masalah ginekologi dengan pendekatan yang ramah dan profesional."
+    image: "/tenagaKaryawan/dokterlayanan4.jpeg",
+    desc: "Dokter spesialis psikologi dengan keahlian dalam memberikan konsultasi psikologi untuk mendukung kesehatan mental individu dan keluarga secara personal dan berbasis bukti ilmiah."
   },
 ];
 
@@ -35,7 +35,7 @@ const page = () => {
       {/* ====================================== */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
         <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] text-center mb-14">
-          Konsul Dokter Spesialis OBGYN
+          Konsul Dokter Spesialis Psikologi
         </h2>
 
         {/* CARD DOKTER */}

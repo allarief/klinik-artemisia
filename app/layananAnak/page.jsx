@@ -4,12 +4,12 @@ import Image from "next/image";
 const doctors = [
   {
     name: "dr. Linda Wati, Sp.A",
-    image: "/tenagaKaryawan/Slide6.jpg",
+    image: "/tenagaKaryawan/dokterlayanan2.jpeg",
     desc: "Dokter spesialis anak dengan pengalaman luas dalam menangani berbagai kasus kesehatan anak secara ramah dan profesional."
   },
   {
     name: "dr. D.A. Dini Primashanti Dewi, M.Biomed ,Sp.A",
-    image: "/tenagaKaryawan/Slide5.jpg",
+    image: "/tenagaKaryawan/dokterlayanan.jpeg",
     desc: "Berpengalaman dalam konsultasi tumbuh kembang dan berbagai kondisi kesehatan anak dengan pendekatan komunikatif."
   }
 ];
