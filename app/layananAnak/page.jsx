@@ -19,21 +19,19 @@ const page = () => {
     <div className="w-full">
 
       {/* ====================================== */}
-{/*         BANNER PROFESIONAL             */}
-{/* ====================================== */}
-<div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] bg-[#c7d5be] flex items-center justify-center">
-
-  {/* Foreground Clear Image */}
-  <div className="relative w-full max-w-5xl h-full p-6 flex items-center justify-center">
-    <Image
-      src="/layanan/Slide4.jpeg"
-      alt="Banner Foreground"
-      fill
-      className="object-contain drop-shadow-xl"
-    />
-  </div>
-</div>
-
+      {/*         BANNER PROFESIONAL             */}
+      {/* ====================================== */}
+      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] bg-[#c7d5be] flex items-center justify-center">
+        <div className="relative w-full max-w-5xl h-full p-6 flex items-center justify-center">
+          <Image
+            src="/layanan/Slide4.jpeg"
+            alt="Banner Foreground"
+            fill
+            className="object-contain drop-shadow-xl"
+            priority
+          />
+        </div>
+      </div>
 
       {/* ====================================== */}
       {/*      KONSULTASI DOKTER SPESIALIS       */}
@@ -59,7 +57,9 @@ const page = () => {
               </div>
 
               <div className="flex-1">
-                <h3 className="text-xl font-semibold text-[#496b44]">{doc.name}</h3>
+                <h3 className="text-xl font-semibold text-[#496b44]">
+                  {doc.name}
+                </h3>
                 <p className="text-[#2f462c] leading-relaxed text-sm mt-2">
                   {doc.desc}
                 </p>
@@ -73,7 +73,6 @@ const page = () => {
         {/* ====================================== */}
         <div className="mt-20 bg-white shadow-lg rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          {/* FOTO */}
           <div className="relative w-full h-[420px] md:h-[560px] rounded-xl overflow-hidden">
             <Image
               src="/pemeriksaan/periksa1.jpeg"
@@ -83,21 +82,50 @@ const page = () => {
             />
           </div>
 
-          {/* DESKRIPSI */}
           <div>
             <h3 className="text-2xl font-semibold text-[#496b44] mb-4">
               Ruang Konsultasi Nyaman
             </h3>
             <p className="text-[#2f462c] leading-relaxed">
-              Ruang konsultasi dirancang dengan suasana yang bersih, rapi, serta ramah bagi anak. 
-              Area yang nyaman membantu anak lebih tenang dan mendukung proses konsultasi yang efektif 
-              antara dokter, orang tua, dan pasien.
+              Ruang konsultasi dirancang dengan suasana yang bersih, rapi, serta ramah
+              bagi anak. Area yang nyaman membantu anak lebih tenang dan mendukung
+              proses konsultasi yang efektif antara dokter, orang tua, dan pasien.
             </p>
           </div>
         </div>
 
-      </section>
+        {/* ====================================== */}
+        {/*        FOTO PEMERIKSAAN (PERSEGI)      */}
+        {/* ====================================== */}
+        <div className="mt-16 bg-white shadow-lg rounded-2xl p-8">
 
+          <h3 className="text-2xl font-semibold text-[#496b44] text-center mb-6">
+            Proses Pemeriksaan Anak
+          </h3>
+
+          <div
+            className="relative w-full max-w-xl mx-auto aspect-square
+                       rounded-xl overflow-hidden bg-[#f6f6f6]
+                       border border-gray-200
+                       flex items-center justify-center"
+          >
+            <Image
+              src="/pemeriksaan/pemeriksaan2.jpeg" // ⬅️ foto persegi dari client
+              alt="Proses Pemeriksaan Anak"
+              fill
+              className="object-contain p-6"
+            />
+          </div>
+
+          <p className="mt-6 text-center text-[#2f462c]
+                        max-w-3xl mx-auto leading-relaxed
+                        text-sm md:text-base">
+            Pemeriksaan anak dilakukan dengan pendekatan yang lembut, aman, dan
+            ramah untuk memastikan anak merasa nyaman selama proses pemeriksaan.
+          </p>
+        </div>
+
+      </section>
     </div>
   );
 };

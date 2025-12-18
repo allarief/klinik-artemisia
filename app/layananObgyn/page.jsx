@@ -21,16 +21,17 @@ const page = () => {
       {/* ====================================== */}
       {/*     BANNER PROFESIONAL (BACKGR COLOR)  */}
       {/* ====================================== */}
-      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] 
-                      bg-[#c7d5be] flex items-center justify-center">
-
-        {/* Foreground Clear */}
+      <div
+        className="relative w-full h-[300px] md:h-[450px] lg:h-[550px]
+                   bg-[#c7d5be] flex items-center justify-center"
+      >
         <div className="relative w-full max-w-5xl h-full p-6 flex items-center justify-center">
           <Image
             src="/layanan/Slide7.jpeg"
             alt="Layanan Obgyn Foreground"
             fill
             className="object-contain drop-shadow-xl"
+            priority
           />
         </div>
       </div>
@@ -48,9 +49,11 @@ const page = () => {
           {doctors.map((doc, i) => (
             <div
               key={i}
-              className="bg-white shadow-lg rounded-2xl p-6 flex gap-6 items-center hover:shadow-xl transition w-full max-w-xl"
+              className="bg-white shadow-lg rounded-2xl p-6 flex gap-6 items-center
+                         hover:shadow-xl transition w-full max-w-xl"
             >
-              <div className="relative w-48 h-48 rounded-2xl overflow-hidden bg-[#f6f6f6] flex items-center justify-center">
+              <div className="relative w-48 h-48 rounded-2xl overflow-hidden
+                              bg-[#f6f6f6] flex items-center justify-center">
                 <Image
                   src={doc.image}
                   alt={doc.name}
@@ -74,10 +77,12 @@ const page = () => {
         {/* ====================================== */}
         {/*               RUANG PERIKSA            */}
         {/* ====================================== */}
-        <div className="mt-20 bg-white shadow-lg rounded-2xl p-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-          {/* FOTO RUANG PERIKSA */}
-          <div className="relative w-full h-[420px] md:h-[560px] rounded-xl overflow-hidden">
+        <div
+          className="mt-20 bg-white shadow-lg rounded-2xl p-8
+                     grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        >
+          <div className="relative w-full h-[420px] md:h-[560px]
+                          rounded-xl overflow-hidden">
             <Image
               src="/pemeriksaan/periksa4.jpeg"
               alt="Ruang Konsultasi"
@@ -91,10 +96,45 @@ const page = () => {
               Ruang Konsultasi Nyaman
             </h3>
             <p className="text-[#2f462c] leading-relaxed">
-              Ruang konsultasi kami dirancang untuk memberikan kenyamanan maksimal bagi pasien selama sesi konsultasi. Dengan suasana yang tenang dan fasilitas modern, kami memastikan setiap kunjungan menjadi pengalaman yang menyenangkan dan mendukung kesehatan Anda.
+              Ruang konsultasi kami dirancang untuk memberikan kenyamanan maksimal bagi
+              pasien selama sesi konsultasi. Dengan suasana yang tenang dan fasilitas
+              modern, kami memastikan setiap kunjungan menjadi pengalaman yang
+              menyenangkan dan mendukung kesehatan Anda.
             </p>
           </div>
         </div>
+
+        {/* ====================================== */}
+        {/*           FOTO PEMERIKSAAN (PERSEGI)   */}
+        {/* ====================================== */}
+        <div className="mt-16 bg-white shadow-lg rounded-2xl p-8">
+
+          <h3 className="text-2xl font-semibold text-[#496b44] text-center mb-6">
+            Proses Pemeriksaan Pasien
+          </h3>
+
+          <div
+            className="relative w-full max-w-xl mx-auto aspect-square
+                       rounded-xl overflow-hidden bg-[#f6f6f6]
+                       border border-gray-200
+                       flex items-center justify-center"
+          >
+            <Image
+              src="/pemeriksaan/pemeriksaan1.jpeg" // ⬅️ foto persegi client
+              alt="Proses Pemeriksaan Pasien"
+              fill
+              className="object-contain p-6"
+            />
+          </div>
+
+          <p className="mt-6 text-center text-[#2f462c]
+                        max-w-3xl mx-auto leading-relaxed
+                        text-sm md:text-base">
+            Pemeriksaan dilakukan oleh tenaga medis profesional dengan prosedur
+            yang aman, higienis, dan mengutamakan kenyamanan serta privasi pasien.
+          </p>
+        </div>
+
       </section>
     </div>
   );

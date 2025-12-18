@@ -73,7 +73,7 @@ export default function AboutPage() {
 
           <div className="relative w-full h-[350px] rounded-xl overflow-hidden shadow-lg">
             <Image
-              src="/tenagaKaryawan/owner.jpg"
+              src="/tenagaKaryawan/owner1.jpeg"
               alt="Owner Profile"
               fill
               className="object-cover"
@@ -81,7 +81,7 @@ export default function AboutPage() {
           </div>
 
           <div className="space-y-4 text-[#2f462c]">
-            <h3 className="text-2xl font-semibold">Albertus</h3>
+            <h3 className="text-2xl font-semibold">Arabelle</h3>
             <p className="text-[15px] leading-relaxed">
               Founder & Head Medical Director dari <strong>Klinik Artemisia</strong>,
               dengan pengalaman lebih dari 12 tahun di dunia kesehatan modern dan manajemen klinik.

@@ -60,17 +60,25 @@ export default function OurTeamPage() {
   ];
 
   // ==================================
-  // HITUNG FILLER "COMING SOON"
+  // FILLER (1 MANAGEMENT + SISANYA COMING SOON)
   // ==================================
   const remainder = allTeam.length % 3;
   const fillerCount = remainder === 0 ? 0 : 3 - remainder;
 
-  const fillerCards = Array(fillerCount).fill({
-    img: "/banner/Coming-Soon.png",  // Pastikan buat gambar placeholder: bisa warna hijau polos
-    title: "Tenaga Baru",
-    desc: "Segera Bergabung Dengan Tim Kami.",
-    category: "Coming Soon",
-  });
+  const fillerCards = [
+    {
+      img: "/tenagaKaryawan/management.jpeg",
+      title: "Staff Management",
+      desc: "Mengelola operasional dan memastikan pelayanan klinik berjalan optimal.",
+      category: "Staff Management",
+    },
+    ...Array(fillerCount - 1).fill({
+      img: "/banner/Coming-Soon.png",
+      title: "Tenaga Baru",
+      desc: "Segera Bergabung Dengan Tim Kami.",
+      category: "Coming Soon",
+    }),
+  ].slice(0, fillerCount);
 
   const finalTeam = [...allTeam, ...fillerCards];
 
@@ -94,7 +102,9 @@ export default function OurTeamPage() {
           alt={item.title}
           fill
           className={`object-cover object-center w-full h-full transition-all duration-700 ${
-            item.category !== "Coming Soon" ? "hover:scale-[1.03]" : "opacity-70"
+            item.category !== "Coming Soon"
+              ? "hover:scale-[1.03]"
+              : "opacity-70"
           }`}
         />
       </div>

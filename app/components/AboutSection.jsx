@@ -37,7 +37,7 @@ export default function AboutSection() {
       {/* RIGHT SIDE IMAGE */}
       <div className="relative w-full min-h-[600px] md:min-h-[750px]">
         <Image
-          src="/bgabout1.jpeg"
+          src="/aboutsection.jpeg"
           alt="Artemisia Clinic Interior"
           fill
           className="object-cover object-center md:object-right"
