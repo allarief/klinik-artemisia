@@ -70,7 +70,7 @@ export default function OurTeamPage() {
       img: "/tenagaKaryawan/pjapt.jpeg",
       title: "Penanggung Jawab Apotek",
       desc: "Mengelola operasional dan memastikan pelayanan klinik berjalan optimal.",
-      category: "Apoteker",
+      category: "Penanggung Jawab Apoteker",
     },
     ...Array(fillerCount - 1).fill({
       img: "/tenagaKaryawan/pjklinik.jpeg",
