@@ -41,7 +41,7 @@ export default function OurTeamPage() {
   ];
 
   const staff = [
-    { img: "/tenagaKaryawan/staff.jpeg", title: "Staff Administrasi", desc: "Membantu proses pelayanan dengan profesional." },
+    { img: "/tenagaKaryawan/staff1.jpeg", title: "Staff Administrasi", desc: "Membantu proses pelayanan dengan profesional." },
   ];
 
   const asistenApoteker = [
@@ -67,16 +67,16 @@ export default function OurTeamPage() {
 
   const fillerCards = [
     {
-      img: "/tenagaKaryawan/management.jpeg",
-      title: "Staff Management",
+      img: "/tenagaKaryawan/pjapt.jpeg",
+      title: "Penanggung Jawab Apotek",
       desc: "Mengelola operasional dan memastikan pelayanan klinik berjalan optimal.",
-      category: "Staff Management",
+      category: "Apoteker",
     },
     ...Array(fillerCount - 1).fill({
-      img: "/banner/Coming-Soon.png",
-      title: "Tenaga Baru",
-      desc: "Segera Bergabung Dengan Tim Kami.",
-      category: "Coming Soon",
+      img: "/tenagaKaryawan/pjklinik.jpeg",
+      title: "Penanggung Jawab Klinik",
+      desc: "Bertanggung jawab atas manajemen dan kualitas pelayanan klinik.",
+      category: "Penanggung Jawab Klinik",
     }),
   ].slice(0, fillerCount);
 

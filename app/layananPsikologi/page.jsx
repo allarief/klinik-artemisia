@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const doctors = [
   {
-    name: "dr. Octavia Putri, M.Psi,",
+    name: "Octavia Putri, M.Psi., Psikolog",
     image: "/tenagaKaryawan/dokterlayanan4.jpeg",
     desc: "Dokter spesialis psikologi dengan keahlian dalam memberikan konsultasi psikologi untuk mendukung kesehatan mental individu dan keluarga secara personal dan berbasis bukti ilmiah."
   },
