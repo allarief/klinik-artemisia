@@ -5,38 +5,56 @@ const doctors = [
   {
     name: "dr. Linda Wati, Sp.A",
     image: "/tenagaKaryawan/dokterlayanan2.jpeg",
-    desc: "Dokter spesialis anak dengan pengalaman luas dalam menangani berbagai kasus kesehatan anak secara ramah dan profesional."
+    desc: "Dokter spesialis anak dengan pengalaman luas dalam menangani berbagai kasus kesehatan anak secara ramah dan profesional.",
   },
   {
     name: "dr. D.A. Dini Primashanti Dewi, M.Biomed ,Sp.A",
     image: "/tenagaKaryawan/dokterlayanan.jpeg",
-    desc: "Berpengalaman dalam konsultasi tumbuh kembang dan berbagai kondisi kesehatan anak dengan pendekatan komunikatif."
-  }
+    desc: "Berpengalaman dalam konsultasi tumbuh kembang dan berbagai kondisi kesehatan anak dengan pendekatan komunikatif.",
+  },
 ];
 
 const page = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
 
       {/* ====================================== */}
-      {/*         BANNER PROFESIONAL             */}
+      {/*        FULL BANNER RESPONSIVE FIX      */}
       {/* ====================================== */}
-      <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] bg-[#c7d5be] flex items-center justify-center">
-        <div className="relative w-full max-w-5xl h-full p-6 flex items-center justify-center">
+      <div className="relative w-full bg-white overflow-hidden">
+
+        {/* ===== MOBILE: gambar utuh, aman ===== */}
+        <div className="relative w-full h-[420px] md:hidden">
           <Image
-            src="/layanan/Slide4.jpeg"
-            alt="Banner Foreground"
+            src="/layanan/testing.png"
+            alt="Banner Layanan Anak"
             fill
-            className="object-contain drop-shadow-xl"
             priority
+            className="object-contain"
           />
         </div>
+
+        {/* ===== DESKTOP: full banner original ===== */}
+        <div className="relative w-full h-[240px] sm:h-[300px] md:h-[420px] lg:h-[480px] hidden md:block overflow-hidden">
+          <Image
+            src="/layanan/testing.png"
+            alt="Banner Layanan Anak"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+
+        </div>
+
+        {/* Divider halus */}
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </div>
 
       {/* ====================================== */}
       {/*      KONSULTASI DOKTER SPESIALIS       */}
       {/* ====================================== */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
+
         <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] text-center mb-14">
           Konsul Dokter Spesialis Anak
         </h2>
@@ -110,7 +128,7 @@ const page = () => {
                        flex items-center justify-center"
           >
             <Image
-              src="/pemeriksaan/pemeriksaan2.jpeg" // ⬅️ foto persegi dari client
+              src="/pemeriksaan/pemeriksaan2.jpeg"
               alt="Proses Pemeriksaan Anak"
               fill
               className="object-contain p-6"

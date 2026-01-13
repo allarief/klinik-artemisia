@@ -31,20 +31,6 @@ export default function ArticlesPage() {
               </div>
             </Link>
           ))}
-
-          {/* ALWAYS SHOW 1 COMING SOON */}
-          <div className="bg-gray-100 border border-gray-300 shadow-inner rounded-lg h-56 flex flex-col items-center justify-center">
-            <p className="text-gray-700 text-lg font-semibold">Coming Soon</p>
-            <p className="text-gray-500 text-sm mt-1">Konten akan segera hadir</p>
-          </div>
-          <div className="bg-gray-100 border border-gray-300 shadow-inner rounded-lg h-56 flex flex-col items-center justify-center">
-            <p className="text-gray-700 text-lg font-semibold">Coming Soon</p>
-            <p className="text-gray-500 text-sm mt-1">Konten akan segera hadir</p>
-          </div>
-          <div className="bg-gray-100 border border-gray-300 shadow-inner rounded-lg h-56 flex flex-col items-center justify-center">
-            <p className="text-gray-700 text-lg font-semibold">Coming Soon</p>
-            <p className="text-gray-500 text-sm mt-1">Konten akan segera hadir</p>
-          </div>
         </div>
       </div>
     </div>

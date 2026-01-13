@@ -83,6 +83,19 @@ export default function Home() {
             <h4 className="font-semibold text-[#3b4f3a]">— Andi P.</h4>
           </div>
 
+          <div className="bg-white p-8 rounded-xl shadow">
+            <p className="text-gray-700 italic mb-4">
+              “Sangat membantu dan profesional sekali”
+            </p>
+            <h4 className="font-semibold text-[#3b4f3a]">— Rahma Widiawati.</h4>
+          </div>
+
+          <div className="bg-white p-8 rounded-xl shadow">
+            <p className="text-gray-700 italic mb-4">
+              “Cepat dan responsif.”
+            </p>
+            <h4 className="font-semibold text-[#3b4f3a]">— Andi Setiawan.</h4>
+          </div>
         </div>
       </section>
 

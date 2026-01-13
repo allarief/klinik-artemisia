@@ -42,7 +42,9 @@ export default function ContactPage() {
 
         {/* ====================== WHATSAPP SECTION ====================== */}
         <div>
-          <h2 className="text-2xl font-semibold text-[#2f462c] mb-6">Kontak WhatsApp</h2>
+          <h2 className="text-2xl font-semibold text-[#2f462c] mb-6">
+            Kontak WhatsApp
+          </h2>
 
           <p className="text-[#496b44] mb-4">
             Klik tombol di bawah untuk terhubung dengan admin kami:
@@ -63,9 +65,26 @@ export default function ContactPage() {
 
           {/* Instagram */}
           <div className="mt-8">
-            <h3 className="text-xl font-semibold text-[#2f462c] mb-2">Instagram</h3>
+            <h3 className="text-xl font-semibold text-[#2f462c] mb-2">
+              Instagram
+            </h3>
             <a
               href="https://instagram.com/artemisiacare"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#496b44] hover:text-[#2f462c] underline text-lg"
+            >
+              @artemisiacare
+            </a>
+          </div>
+
+          {/* TikTok */}
+          <div className="mt-4">
+            <h3 className="text-xl font-semibold text-[#2f462c] mb-2">
+              TikTok
+            </h3>
+            <a
+              href="https://www.tiktok.com/@artemisiacare"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#496b44] hover:text-[#2f462c] underline text-lg"
@@ -77,7 +96,9 @@ export default function ContactPage() {
 
         {/* ====================== EMAIL FORM SECTION ====================== */}
         <div>
-          <h2 className="text-2xl font-semibold text-[#2f462c] mb-6">Kirim Pesan via Email</h2>
+          <h2 className="text-2xl font-semibold text-[#2f462c] mb-6">
+            Kirim Pesan via Email
+          </h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
@@ -118,17 +139,17 @@ export default function ContactPage() {
             </button>
           </form>
 
-          {/* Email Info */}
           <p className="mt-6 text-[#2f462c] leading-relaxed">
             Email: <strong>info@artemisia.care</strong>
           </p>
         </div>
-
       </div>
 
       {/* ====================== GOOGLE MAP ====================== */}
       <div className="max-w-6xl mx-auto px-6 md:px-12 mt-20">
-        <h2 className="text-2xl font-semibold text-[#2f462c] mb-6 text-center">Lokasi Klinik</h2>
+        <h2 className="text-2xl font-semibold text-[#2f462c] mb-6 text-center">
+          Lokasi Klinik
+        </h2>
 
         <div className="w-full h-[350px] md:h-[450px] rounded-xl overflow-hidden shadow">
           <iframe

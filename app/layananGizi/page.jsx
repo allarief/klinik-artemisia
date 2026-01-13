@@ -5,36 +5,50 @@ const doctors = [
   {
     name: "dr. Patricia Amanda, M.Gizi , Sp.GK",
     image: "/tenagaKaryawan/dokterlayanan3.jpeg",
-    desc: "Dokter spesialis gizi dengan keahlian dalam memberikan konsultasi gizi untuk mendukung kesehatan ibu dan anak secara personal dan berbasis bukti ilmiah."
+    desc: "Dokter spesialis gizi dengan keahlian dalam memberikan konsultasi gizi untuk mendukung kesehatan ibu dan anak secara personal dan berbasis bukti ilmiah.",
   },
 ];
 
 const page = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
 
       {/* ====================================== */}
-      {/*         BANNER PROFESIONAL (NO BLUR)   */}
+      {/*        BANNER FULL WIDTH FIXED         */}
       {/* ====================================== */}
-      <div
-        className="relative w-full h-[300px] md:h-[450px] lg:h-[550px]
-                   bg-[#c7d5be] flex items-center justify-center"
-      >
-        <div className="relative w-full max-w-5xl h-full p-6 flex items-center justify-center">
+      <div className="relative w-full bg-white overflow-hidden">
+
+        {/* ===== MOBILE (gambar utuh, tidak terpotong) ===== */}
+        <div className="relative w-full h-[420px] md:hidden">
           <Image
-            src="/layanan/Slide2.jpeg"
-            alt="Layanan Gizi Foreground"
+            src="/layanan/Slide2.png"
+            alt="Banner Layanan Gizi"
             fill
-            className="object-contain drop-shadow-xl"
             priority
+            className="object-contain"
           />
         </div>
+
+        {/* ===== DESKTOP (full banner seperti awal) ===== */}
+        <div className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] hidden md:block">
+          <Image
+            src="/layanan/Slide2.png"
+            alt="Banner Layanan Gizi"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+        </div>
+
+        {/* Divider halus */}
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </div>
 
       {/* ====================================== */}
       {/*    KONSULTASI DOKTER SPESIALIS GIZI    */}
       {/* ====================================== */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
+
         <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] text-center mb-14">
           Konsul Dokter Spesialis Gizi
         </h2>
@@ -119,7 +133,7 @@ const page = () => {
                        flex items-center justify-center"
           >
             <Image
-              src="/pemeriksaan/pemeriksaan3.jpeg" // ⬅️ foto persegi dari client
+              src="/pemeriksaan/pemeriksaan3.jpeg"
               alt="Proses Pemeriksaan Gizi"
               fill
               className="object-contain p-6"

@@ -5,36 +5,61 @@ const doctors = [
   {
     name: "Octavia Putri, M.Psi., Psikolog",
     image: "/tenagaKaryawan/dokterlayanan4.jpeg",
-    desc: "Dokter spesialis psikologi dengan keahlian dalam memberikan konsultasi psikologi untuk mendukung kesehatan mental individu dan keluarga secara personal dan berbasis bukti ilmiah."
+    desc: "Dokter spesialis psikologi dengan keahlian dalam memberikan konsultasi psikologi untuk mendukung kesehatan mental individu dan keluarga secara personal dan berbasis bukti ilmiah.",
   },
 ];
 
 const page = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
 
       {/* ====================================== */}
-      {/*         BANNER PROFESIONAL (NO BLUR)   */}
+      {/*        FULL BANNER RESPONSIVE FIX      */}
       {/* ====================================== */}
-      <div
-        className="relative w-full h-[300px] md:h-[450px] lg:h-[550px]
-                   bg-[#c7d5be] flex items-center justify-center"
-      >
-        <div className="relative w-full max-w-5xl h-full p-6 flex items-center justify-center">
+      <div className="relative w-full bg-white overflow-hidden">
+
+        {/* ===== MOBILE: gambar UTUH & JELAS ===== */}
+        <div className="relative w-full h-[420px] md:hidden">
           <Image
-            src="/layanan/Slide10.jpeg"
-            alt="Layanan Psikologi Foreground"
+            src="/layanan/Slide10.png"
+            alt="Banner Layanan Psikologi"
             fill
-            className="object-contain drop-shadow-xl"
             priority
+            className="object-contain"
           />
         </div>
+
+        {/* ===== DESKTOP: FULL BANNER ORIGINAL ===== */}
+        <div
+          className="
+            relative w-full
+            h-[240px]
+            sm:h-[300px]
+            md:h-[420px]
+            lg:h-[480px]
+            hidden md:block
+            overflow-hidden
+          "
+        >
+          <Image
+            src="/layanan/Slide10.png"
+            alt="Banner Layanan Psikologi"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+
+        </div>
+
+        {/* Divider halus */}
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </div>
 
       {/* ====================================== */}
       {/*        KONSULTASI DOKTER SPESIALIS     */}
       {/* ====================================== */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
+
         <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] text-center mb-14">
           Konseling Psikologi
         </h2>
@@ -119,7 +144,7 @@ const page = () => {
                        flex items-center justify-center"
           >
             <Image
-              src="/pemeriksaan/pemeriksaan4.jpeg" // ⬅️ foto persegi dari client
+              src="/pemeriksaan/pemeriksaan4.jpeg"
               alt="Proses Konseling Psikologi"
               fill
               className="object-contain p-6"

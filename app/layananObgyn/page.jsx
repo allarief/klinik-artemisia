@@ -5,41 +5,68 @@ const doctors = [
   {
     name: "dr. Mervinna Giovanni, M.Biomed ,Sp.OG",
     image: "/tenagaKaryawan/dokterlayanan5.jpeg",
-    desc: "Dokter spesialis Obgyn dengan pengalaman luas dalam menangani berbagai kondisi kesehatan wanita."
+    desc: "Dokter spesialis Obgyn dengan pengalaman luas dalam menangani berbagai kondisi kesehatan wanita.",
   },
   {
     name: "dr. Ratih Puty, Sp.OG",
     image: "/tenagaKaryawan/dokterlayanan6.png",
-    desc: "Dokter spesialis Obgyn yang berdedikasi dalam memberikan perawatan terbaik untuk kesehatan reproduksi wanita."
-  }
+    desc: "Dokter spesialis Obgyn yang berdedikasi dalam memberikan perawatan terbaik untuk kesehatan reproduksi wanita.",
+  },
 ];
 
 const page = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
 
       {/* ====================================== */}
-      {/*     BANNER PROFESIONAL (BACKGR COLOR)  */}
+      {/*        FULL BANNER (FOCUS FIXED)        */}
       {/* ====================================== */}
-      <div
-        className="relative w-full h-[300px] md:h-[450px] lg:h-[550px]
-                   bg-[#c7d5be] flex items-center justify-center"
-      >
-        <div className="relative w-full max-w-5xl h-full p-6 flex items-center justify-center">
+      <div className="relative w-full overflow-hidden">
+
+        {/* ===== MOBILE: gambar UTUH & jelas ===== */}
+        <div className="relative w-full h-[420px] md:hidden">
           <Image
-            src="/layanan/Slide7.jpeg"
-            alt="Layanan Obgyn Foreground"
+            src="/layanan/Slide7.png"
+            alt="Banner Layanan Obgyn"
             fill
-            className="object-contain drop-shadow-xl"
             priority
+            className="object-contain"
           />
         </div>
+
+        {/* ===== DESKTOP: fokus TURUN ke judul ===== */}
+        <div
+          className="
+            relative hidden md:block w-full
+            h-[260px]
+            md:h-[420px]
+            lg:h-[520px]
+            overflow-hidden
+          "
+        >
+          <Image
+            src="/layanan/Slide7.png"
+            alt="Banner Layanan Obgyn"
+            fill
+            priority
+            className="
+              object-cover
+              object-[50%_35%]
+              lg:object-[50%_40%]
+            "
+          />
+
+        </div>
+
+        {/* Divider halus */}
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       </div>
 
       {/* ====================================== */}
       {/*     KONSULTASI DOKTER SPESIALIS OBGYN  */}
       {/* ====================================== */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
+
         <h2 className="text-3xl md:text-4xl font-semibold text-[#2f462c] text-center mb-14">
           Konsul Dokter Spesialis Ob Gyn
         </h2>
@@ -49,11 +76,14 @@ const page = () => {
           {doctors.map((doc, i) => (
             <div
               key={i}
-              className="bg-white shadow-lg rounded-2xl p-6 flex gap-6 items-center
-                         hover:shadow-xl transition w-full max-w-xl"
+              className="
+                bg-white shadow-lg rounded-2xl p-6
+                flex gap-6 items-center
+                hover:shadow-xl transition
+                w-full max-w-xl
+              "
             >
-              <div className="relative w-48 h-48 rounded-2xl overflow-hidden
-                              bg-[#f6f6f6] flex items-center justify-center">
+              <div className="relative w-48 h-48 rounded-2xl overflow-hidden bg-[#f6f6f6] flex items-center justify-center">
                 <Image
                   src={doc.image}
                   alt={doc.name}
@@ -78,11 +108,12 @@ const page = () => {
         {/*               RUANG PERIKSA            */}
         {/* ====================================== */}
         <div
-          className="mt-20 bg-white shadow-lg rounded-2xl p-8
-                     grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+          className="
+            mt-20 bg-white shadow-lg rounded-2xl p-8
+            grid grid-cols-1 md:grid-cols-2 gap-12 items-center
+          "
         >
-          <div className="relative w-full h-[420px] md:h-[560px]
-                          rounded-xl overflow-hidden">
+          <div className="relative w-full h-[420px] md:h-[560px] rounded-xl overflow-hidden">
             <Image
               src="/pemeriksaan/periksa4.jpeg"
               alt="Ruang Konsultasi"
@@ -114,22 +145,28 @@ const page = () => {
           </h3>
 
           <div
-            className="relative w-full max-w-xl mx-auto aspect-square
-                       rounded-xl overflow-hidden bg-[#f6f6f6]
-                       border border-gray-200
-                       flex items-center justify-center"
+            className="
+              relative w-full max-w-xl mx-auto aspect-square
+              rounded-xl overflow-hidden bg-[#f6f6f6]
+              border border-gray-200
+              flex items-center justify-center
+            "
           >
             <Image
-              src="/pemeriksaan/pemeriksaan1.jpeg" // ⬅️ foto persegi client
+              src="/pemeriksaan/pemeriksaan1.jpeg"
               alt="Proses Pemeriksaan Pasien"
               fill
               className="object-contain p-6"
             />
           </div>
 
-          <p className="mt-6 text-center text-[#2f462c]
-                        max-w-3xl mx-auto leading-relaxed
-                        text-sm md:text-base">
+          <p
+            className="
+              mt-6 text-center text-[#2f462c]
+              max-w-3xl mx-auto leading-relaxed
+              text-sm md:text-base
+            "
+          >
             Pemeriksaan dilakukan oleh tenaga medis profesional dengan prosedur
             yang aman, higienis, dan mengutamakan kenyamanan serta privasi pasien.
           </p>
